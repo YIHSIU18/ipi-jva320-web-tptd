@@ -29,7 +29,7 @@ public class SalarieController {
     {
         SalarieAideADomicile salarie = salarieAideADomicileService.getSalarie(id);
         model.put("salarie", salarie);
-        model.put ("actionUrl","/salaries/"+ salarie.getId());
+        model.put ("actionUrl","/salaries/save");
 
         return "detail_Salarie";
     }
