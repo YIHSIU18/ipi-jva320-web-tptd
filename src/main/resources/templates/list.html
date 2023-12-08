@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
   <title>Gestion des salariés</title>
@@ -47,6 +47,11 @@
         </tr>
         </thead>
         <tbody>
+        <tr th:each="salarie : ${salaries}">
+          <th scope="row" th:text="${salaries.id}"></th>
+          <td th:text="${salaries.nom}"></td>
+          <td><a th:href="@{/salaries/aide/{id}(id=${salaries.id})}" class="btn btn-primary">Détail</a></td>
+        </tr>
         <tr>
           <th scope="row">1</th>
           <td>Jeanne Dupond</td>
@@ -70,7 +75,11 @@
             <li><a href="#" class="page-link">Page 1</a></li>
             <li class="page-item ">
               <a class="page-link" href="/salaries?page=1&amp;size=10&amp;sortProperty=nom&amp;sortDirection=ASC">»</a></li>
-          </ul></div>
+          </ul>
+          <ul th:each="tag : ${lists}">
+            <li><a th:text="${list}" th:href="@{/lists(list=${list})}"></a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
