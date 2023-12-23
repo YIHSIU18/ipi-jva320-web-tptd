@@ -23,20 +23,6 @@ public class HomeController
         return "home";
     }
 
-    /*@GetMapping(value = "/common")
-    public String common(final ModelMap m) {
-        m.put("elts", Arrays.asList("page1", "page2"));
-        m.put("title", "Menu");
-        List<String> elements = new ArrayList<>();
-        elements.add("Élément 1");
-        elements.add("Élément 2");
-        elements.add("Élément 3");
-
-        m.put("elements", elements);
-
-        return "common";
-    }*/
-
     @GetMapping(value ="/page1")
     public String page1(final ModelMap m) {
         return "fpage1";
