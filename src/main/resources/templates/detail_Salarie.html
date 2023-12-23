@@ -20,11 +20,11 @@
                 <li><a href="http://localhost:8080/salaries?page=0&amp;size=10&amp;sortProperty=nom&amp;sortDirection=ASC" class="nav-link">Liste des salariés <span class="badge badge-primary">26</span></a></li>
             </ul>
 
-            <form class="form-inline my-2 my-lg-0" role="search" action="http://localhost:8080/salaries" method="GET">
+            <form class="form-inline my-2 my-lg-0" role="search" action="http://localhost:8080/salaries" th:action="@{/salaries}" method="GET">
                 <div class="form-group form-inline">
                     <input name="nom" class="form-control" placeholder="Rechercher un nom" type="text">
                 </div>
-                <button type="submit" class="btn btn-outline-success ml-2 my-2 my-sm-0">Rechercher</button>
+                <button type="submit" name="action" value="recherche"  class="btn btn-outline-success ml-2 my-2 my-sm-0">Rechercher</button>
             </form>
         </div>
     </nav>
@@ -40,7 +40,7 @@
         <div class="col-lg-6">
             <div class="form-group">
                 <label class="form-control-label" for="id">ID</label>
-                <input type="text" value="10" class="form-control" name="id" id="id" th:value="${salarie.id}" disabled="true">
+                <input type="text" value="10" class="form-control" name="id" id="id" th:value="${salarie.id}">
 
                 <label class="form-control-label" for="nom">Nom</label>
                 <input type="text" th:value="${salarie} != null ? ${salarie.nom}" value="Jean Dupont" class="form-control" name="nom" id="nom" >
@@ -125,7 +125,7 @@
     <div class="row mt-2">
         <div class="col-lg-6">
             <input form="saveForm" class="btn btn-primary" type="submit" value="Enregistrer">
-            <a href="/salaries/10/delete" class="btn btn-danger">Supprimer</a>
+            <a th:href="@{'/salaries/' + ${salarie.id} + '/delete'}"  class="btn btn-danger">Supprimer</a>
         </div>
     </div>
 

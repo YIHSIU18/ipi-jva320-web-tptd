@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+</head>
+<body>
+<div class="container"th:insert="~{common :: menu}"></div>
+<div class="container" th:replace="~{common :: productListing}"></div>
+<div class="container" th:insert="~{common :: item('Item', ${elts})}"></div>
+<div class="container" th:replace="~{common :: footer}"></div>
+</body>
+</html>

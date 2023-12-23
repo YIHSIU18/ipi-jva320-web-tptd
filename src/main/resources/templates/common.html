@@ -1,0 +1,60 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<!--Fragment menu-->
+<div class="nav-div" th:fragment="menu">
+  <h1>Vêtements filles</h1>
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/page1">Page 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/page2">Page 2</a>
+    </li>
+  </ul>
+</div>
+<div th:fragment="name(p1)">
+  <p>
+    Produit : <span th:text="${p1}"></span>
+  </p>
+</div>
+<!--Fragment productListing-->
+<div class="product" th:fragment="productListing">
+  <section>
+    <h2>La list de Produit </h2>
+    <div class="product">
+      <h3>Chemise</h3>
+      <p>Chemise pailletée marron</p>
+      <span>$29.99</span>
+    </div>
+    <div class="product">
+      <h3>Pantalon</h3>
+      <p>Pantalon en simili cuir noir</p>
+      <span>$39.99</span>
+    </div>
+
+  </section>
+</div>
+
+<div th:fragment="info-box">
+  <div class="info-box">
+    <p>Vêtements femme pas cher et tendance. Des petits prix sur nos robes, pulls, jeans, combinaisons, chaussures... Livraison gratuite dès 60€ d'achat !</p>
+  </div>
+</div>
+
+<div th:fragment="item(title, elements)">
+  <h3 th:text="${title}"></h3>
+  <ul th:each="element : ${elements}" class="nav">
+    <li class="nav-item">Item</li>
+  </ul>
+</div>
+
+
+<!--Fragment footer-->
+
+<div class="footer text-center py-3" th:fragment="footer">
+  <p>&copy; 2023 Tous droits réservés.</p>
+</div>
+
+
+</body>
+</html>
